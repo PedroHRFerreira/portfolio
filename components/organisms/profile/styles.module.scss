@@ -90,6 +90,7 @@
       height: 500px;
       border-left: 1px solid aqua;
       padding: 10px;
+
       @media (max-width: 686px) {
         border-left: none;
         border-top: 1px solid aqua;
@@ -97,6 +98,18 @@
         @include flex(center, column);
         &__cards:first-child {
           margin-top: 73rem;
+        }
+      }
+
+      @media (max-width: 516px) {
+        &__cards:first-child {
+          margin-top: 90rem;
+        }
+      }
+
+      @media (max-width: 403px) {
+        &__cards:first-child {
+          margin-top: 100rem;
         }
       }
 
