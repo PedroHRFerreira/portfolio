@@ -1,0 +1,78 @@
+@mixin font-size($size, $line-height, $weight) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+}
+
+.type-text {
+  width: auto;
+  height: auto;
+  display: flex;
+  text-align: left;
+  padding: 5px;
+
+  &.extra-large {
+    @include font-size(28px, 28.8px, 700);
+  }
+
+  &.large {
+    @include font-size(26px, 25.6px, 600);
+  }
+
+  &.medium {
+    @include font-size(24px, 22.4px, 600);
+  }
+
+  &.small {
+    @include font-size(22px, 19.2px, 600);
+  }
+
+  &.extra-small {
+    @include font-size(16px, 12.2px, 600);
+  }
+
+  // Type Colors
+  &.default {
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      color: aqua;
+    }
+  }
+
+  &.primary {
+    color: var(--neutralDarkGrey);
+
+    &:hover {
+      color: var(--neutralLightGrey3);
+    }
+  }
+
+  &.dark {
+    color: var(--backgroundModal);
+
+    &:hover {
+      color: var(--neutralDarkGrey2);
+    }
+  }
+
+  &.animation {
+    background: linear-gradient(90deg, #fff, aqua, #fff);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: wave 3s infinite linear;
+    text-align: center;
+  }
+
+  @keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}

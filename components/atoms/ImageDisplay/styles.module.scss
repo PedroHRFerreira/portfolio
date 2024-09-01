@@ -1,0 +1,17 @@
+.card-image {
+  padding: 10px;
+  border: 1px solid transparent;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+
+  .content-image {
+    max-width: var(--max-width);
+    width: var(--width);
+    height: var(--height);
+    border-radius: 6px;
+  }
+  .image-text {
+    padding: 5px;
+  }
+}

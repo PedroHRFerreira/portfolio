@@ -1,0 +1,67 @@
+@mixin recreational-button() {
+  max-width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+}
+@mixin width($width, $lineHeight, $padding: 0) {
+  width: $width;
+  line-height: $lineHeight;
+  padding: $padding;
+}
+
+.recreational-button {
+  @include recreational-button();
+
+  &.small {
+    @include width(40%, 10px);
+  }
+
+  &.primary {
+    @include width(50%, 10.4px);
+  }
+
+  &.medium {
+    @include width(100%, 12.2px, 12px 14px);
+  }
+
+  &.big {
+    @include width(100%, 24.7px, 12px 14px);
+  }
+
+  &.default {
+    border-radius: 6px;
+    box-shadow: 0px 4px 14px var(--auxiliary-green-700);
+    transition: background-color 0.6s ease;
+
+    &:hover {
+      background-color: var(--auxiliary-green-700);
+    }
+  }
+
+  &.cancel {
+    border-radius: 6px;
+    box-shadow: 0px 4px 14px var(--auxiliary-red-600);
+    transition: background-color 0.6s ease;
+
+    &:hover {
+      background-color: var(--auxiliary-red-600);
+    }
+  }
+
+  &.dark {
+    background: transparent;
+    border-radius: 6px;
+    transition: box-shadow 0.6s ease;
+
+    &:hover {
+      box-shadow: 0px 4px 14px aqua;
+    }
+  }
+}

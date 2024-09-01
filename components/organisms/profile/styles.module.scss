@@ -1,0 +1,181 @@
+@mixin flex($justify-content, $flex-direction, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+.profile {
+  max-width: 1851px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  padding-left: 24px;
+  padding-right: 22px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  &__modal,
+  .footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  &__modal.visible,
+  .footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__modal {
+    border: 1px solid aqua;
+    border-radius: 6px;
+    max-width: 925px;
+    width: 100%;
+    margin-top: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include flex(space-between, row);
+    overflow: visible;
+    transform: translateY(-20px);
+    @media (max-width: 686px) {
+      @include flex(space-between, column);
+    }
+
+    &__what {
+      @include flex(space-evenly, column);
+      width: 50%;
+      overflow: auto;
+      @media (max-width: 686px) {
+        width: 100%;
+      }
+      .title {
+        color: #fff;
+        padding: 12px;
+        &:hover,
+        &:focus {
+          color: aqua;
+        }
+      }
+      .text {
+        width: 85%;
+        text-align: left;
+        background: linear-gradient(90deg, #fff, aqua, #fff);
+        background-size: 200% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: wave 3s infinite linear;
+        max-height: 400px;
+        overflow: auto;
+        @keyframes wave {
+          0% {
+            background-position: 0% 50%;
+          }
+          100% {
+            background-position: 100% 50%;
+          }
+        }
+      }
+    }
+
+    &__card {
+      overflow: auto;
+      height: 500px;
+      border-left: 1px solid aqua;
+      padding: 10px;
+      @media (max-width: 686px) {
+        border-left: none;
+        border-top: 1px solid aqua;
+        width: 97%;
+        @include flex(center, column);
+        &__cards:first-child {
+          margin-top: 73rem;
+        }
+      }
+
+      &__cards {
+        @include flex(center, column);
+        gap: 12px;
+        margin-top: 10px;
+        margin-left: 10px;
+        border: 1px solid aqua;
+        border-radius: 6px;
+        max-width: 425px;
+        height: 150px;
+        cursor: pointer;
+        flex-grow: 1;
+        @media (max-width: 686px) {
+          max-width: 550px;
+          height: 350px;
+        }
+
+        &:hover {
+          background: var(--neutralDarkGrey1);
+        }
+
+        &--section {
+          @include flex(flex-start, column);
+          padding: 5px;
+
+          .text {
+            text-align: left;
+            width: 85%;
+            margin-top: -10px;
+          }
+        }
+      }
+    }
+  }
+
+  .copyInfo {
+    @include flex(center, row);
+    position: fixed;
+    width: 200px;
+    height: 60px;
+    bottom: 10px;
+    right: 10px;
+    border: 1px solid var(--brandPrimary6);
+    box-shadow: 0 2px 10px aqua;
+    border-radius: 8px;
+    z-index: 1000;
+    animation: animation 1s forwards;
+    @keyframes animation {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  .footer {
+    position: relative;
+    background: #000;
+    width: 100%;
+    height: 50px;
+    left: 0;
+    right: 0;
+    @media (max-width: 406px) {
+      height: auto;
+    }
+
+    &__title {
+      position: relative;
+      top: 20px;
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(to right, #00274d, #007acc, #00cccc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@mixin flex($justify-content, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+.header {
+  @include flex(space-between);
+  padding: 1rem;
+
+  &__email {
+    @include flex(space-between);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    @media (max-width: 506px) {
+      @include flex(flex-start);
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__about {
+    @include flex(space-evenly);
+    max-width: 350px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      @include flex(center);
+      flex-direction: column;
+      align-items: end;
+      gap: 1rem;
+    }
+
+    @media (max-width: 506px) {
+      display: none;
+    }
+  }
+}
