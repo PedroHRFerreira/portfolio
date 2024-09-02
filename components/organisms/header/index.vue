@@ -25,7 +25,7 @@ export default defineComponent({
       <AtomsParagraphTitle
         text="devpedrohr@gmail.com"
         size="extra-small"
-        types="default"
+        types="animation"
       />
     </div>
 

@@ -62,8 +62,9 @@ export default defineComponent({
       ];
     });
 
-    const copyInfo = () => {
-      navigator.clipboard.writeText("Conteúdo copiado!").then(() => {
+    const copyInfo = (item: any) => {
+      const info = `${item.text} ${item.description}`;
+      navigator.clipboard.writeText(info).then(() => {
         showModal.value = true;
         setTimeout(() => (showModal.value = false), 2000);
       });
@@ -124,9 +125,11 @@ export default defineComponent({
           v-for="(item, index) in items"
           :key="index"
           class="profile__modal__card__cards"
-          @click="copyInfo"
         >
-          <div class="profile__modal__card__cards--section">
+          <div
+            class="profile__modal__card__cards--section"
+            @click="copyInfo(item)"
+          >
             <AtomsParagraphTitle
               :text="item.text"
               size="small"
