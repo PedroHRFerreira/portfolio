@@ -6,10 +6,10 @@
 }
 
 .profile {
-  max-width: 1851px;
   width: 100%;
   position: absolute;
   left: 0;
+  right: 0;
   padding-left: 24px;
   padding-right: 22px;
   background: linear-gradient(
@@ -51,7 +51,6 @@
     &__what {
       @include flex(space-evenly, column);
       width: 50%;
-      overflow: auto;
       @media (max-width: 686px) {
         width: 100%;
       }
@@ -72,8 +71,9 @@
         -webkit-background-clip: text;
         color: transparent;
         animation: wave 3s infinite linear;
-        max-height: 400px;
+        height: 400px;
         overflow: auto;
+
         @keyframes wave {
           0% {
             background-position: 0% 50%;
@@ -81,6 +81,12 @@
           100% {
             background-position: 100% 50%;
           }
+        }
+
+        @media (max-width: 686px) {
+          width: 80%;
+          height: auto;
+          overflow: auto;
         }
       }
     }

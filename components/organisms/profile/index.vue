@@ -111,21 +111,12 @@ export default defineComponent({
         />
         <h1 class="title">Quem é Pedro Henrique?</h1>
         <p class="text">
-          Tenho 17 anos e estou iniciando minha jornada como desenvolvedor
-          front-end na Braip, onde já acumulo 1.4 meses de experiência. Possuo
-          um sólido domínio de JavaScript, TypeScript, Vue.js, Nuxt.js, Sass,
-          CSS, HTML e integração com bancos de dados através de ferramentas como
-          Workbench e DBeaver-CE. Estou determinado a expandir minhas
-          habilidades para me tornar um desenvolvedor full-stack. Busco integrar
-          meu conhecimento front-end com competências back-end, visando criar
-          soluções completas e eficientes para projetos desafiadores. Minha
-          dedicação em melhorar continuamente a experiência do usuário se
-          reflete na aplicação das melhores práticas de desenvolvimento em cada
-          projeto que participo. Com uma paixão evidente pelo desenvolvimento
-          web, mantenho um forte compromisso com o aprendizado contínuo. Estou
-          sempre em busca de novos desafios que possam ampliar minhas
-          habilidades técnicas e contribuir para iniciativas inovadoras e de
-          alto impacto no campo da tecnologia.
+          Tenho 17 anos e sou desenvolvedor front-end na Braip, com 1,4 meses de
+          experiência. Tenho domínio de JavaScript, TypeScript, Vue.js, Nuxt.js,
+          Sass, CSS, HTML, Git, npm e ferramentas de banco de dados como
+          Workbench e DBeaver-CE. Busco expandir para full-stack e criar
+          soluções completas, sempre comprometido com a melhoria contínua e
+          novos desafios no desenvolvimento web.
         </p>
       </div>
       <div class="profile__modal__card">
