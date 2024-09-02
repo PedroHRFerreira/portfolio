@@ -94,7 +94,8 @@
       @media (max-width: 686px) {
         border-left: none;
         border-top: 1px solid aqua;
-        width: 97%;
+        width: 95%;
+
         @include flex(center, column);
         &__cards:first-child {
           margin-top: 73rem;
@@ -124,9 +125,12 @@
         height: 150px;
         cursor: pointer;
         flex-grow: 1;
+
         @media (max-width: 686px) {
           max-width: 550px;
           height: 350px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         &:hover {
