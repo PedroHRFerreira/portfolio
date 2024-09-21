@@ -22,8 +22,27 @@
 
   &__about {
     @include flex(space-evenly);
-    max-width: 350px;
+    max-width: 400px;
     width: 100%;
+    padding-right: 50px;
+
+    .icon {
+      display: inline-block;
+      cursor: pointer;
+
+      &:hover {
+        animation: rotate360 2s linear infinite;
+      }
+
+      @keyframes rotate360 {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
 
     @media (max-width: 768px) {
       width: 100%;
@@ -33,8 +52,16 @@
       gap: 1rem;
     }
 
-    @media (max-width: 506px) {
-      display: none;
+    @media (max-width: 800px) {
+      .button {
+        display: none;
+      }
+      .modal {
+        display: block;
+      }
+
+      @include flex(center, flex-end);
+      max-width: 350px;
     }
   }
 }

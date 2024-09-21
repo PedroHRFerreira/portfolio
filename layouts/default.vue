@@ -1,10 +1,19 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "LayoutDefault",
   setup() {
-    return {};
+    const showModal = ref(true);
+
+    const handleToggleModal = () => {
+      showModal.value = !showModal.value;
+    };
+
+    return {
+      showModal,
+      handleToggleModal,
+    };
   },
 });
 </script>
@@ -13,17 +22,27 @@ export default defineComponent({
   <div class="layout-container">
     <video autoplay muted loop class="background-video">
       <source
+        src="/public/images/1449850-hd_1906_1080_28fps.mp4"
+        type="video/mp4"
+      />
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <video v-if="showModal" autoplay muted loop class="background-video">
+      <source
         src="/public/images/854569-hd_1920_1080_25fps.mp4"
         type="video/mp4"
       />
       Seu navegador não suporta o elemento de vídeo.
     </video>
+
     <header class="layout-header">
-      <OrganismsHeader />
+      <OrganismsHeader @toggle="handleToggleModal" />
     </header>
     <main class="layout-main">
       <section class="layout-content">
         <OrganismsMain />
+        <MoleculesImagesCarousel />
         <OrganismsProfile id="organisms-profile" />
       </section>
     </main>
@@ -56,6 +75,16 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    animation: fadeIn 3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .layout-header {
@@ -68,7 +97,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+
+    #organisms-profile {
+      z-index: 1;
+    }
   }
 }
 </style>

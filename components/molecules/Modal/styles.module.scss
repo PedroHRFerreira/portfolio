@@ -1,0 +1,66 @@
+@mixin flex($flex-direction, $justify-content) {
+  display: flex;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+}
+
+.modal {
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  animation: fadeIn 2s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  &__main {
+    width: 100%;
+
+    &--header {
+      @include flex(row, space-evenly);
+      align-items: center;
+      width: 100%;
+
+      @media (max-width: 530px) {
+        .text {
+          font-size: 16px;
+          width: 150px;
+        }
+      }
+
+      .section-icon {
+        @include flex(row, space-between);
+        gap: 12px;
+        max-width: 350px;
+      }
+    }
+  }
+
+  &__center {
+    width: 100%;
+    @include flex(column, center);
+    align-items: center;
+    padding-top: 4rem;
+  }
+}

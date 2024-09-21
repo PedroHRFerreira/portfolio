@@ -2,7 +2,13 @@
 import { defineComponent } from "vue";
 
 const SIZE_OPTIONS = ["extra-large", "large", "medium", "small", "extra-small"];
-const TYPE_OPTIONS = ["default", "primary", "dark", "animation"];
+const TYPE_OPTIONS = [
+  "default",
+  "primary",
+  "dark",
+  "animation",
+  "dark-animation",
+];
 
 export default defineComponent({
   name: "AtomsParagraphTitle",

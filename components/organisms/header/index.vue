@@ -1,8 +1,11 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "OrganismsHeader",
-  setup() {
+  emits: ["toggle"],
+  setup(_, { emit }: any) {
+    const showModal = ref(false);
+
     const redirectAbout = () => {
       window.location.href = "https://github.com/PedroHRFerreira";
     };
@@ -11,9 +14,15 @@ export default defineComponent({
       window.location.href = "https://www.instagram.com/pedrohr_dev/";
     };
 
+    const toggleModal = () => {
+      emit("toggle");
+    };
+
     return {
-      redirectAbout,
       redirect,
+      showModal,
+      toggleModal,
+      redirectAbout,
     };
   },
 });
@@ -35,12 +44,22 @@ export default defineComponent({
         text="Sobre mim"
         type="dark"
         @click="redirect"
+        class="button"
       />
       <MoleculesButton
         size="small"
         text="Contate-me"
         type="dark"
         @click="redirectAbout"
+        class="button"
+      />
+      <img
+        class="icon"
+        src="/assets/icons/diagram.svg"
+        width="50px"
+        height="50px"
+        alt=""
+        @click="toggleModal"
       />
     </div>
   </header>

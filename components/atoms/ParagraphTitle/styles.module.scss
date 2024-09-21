@@ -64,7 +64,15 @@
     -webkit-background-clip: text;
     color: transparent;
     animation: wave 3s infinite linear;
-    text-align: center;
+  }
+
+  &.dark-animation {
+    background: linear-gradient(90deg, #10101f, aqua, #10101f);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: wave-dark 6s infinite linear;
   }
 
   @keyframes wave {
@@ -73,6 +81,24 @@
     }
     100% {
       background-position: 100% 50%;
+    }
+  }
+
+  @keyframes wave-dark {
+    0% {
+      background-position: 0% 100%;
+    }
+    25% {
+      background-position: 50% 100%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    75% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
     }
   }
 }
