@@ -61,6 +61,7 @@ export default defineComponent({
         alt=""
         @click="toggleModal"
       />
+      <MoleculesAnimatedMenu class="menu" @onTheme="toggleModal" />
     </div>
   </header>
 </template>

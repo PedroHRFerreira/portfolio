@@ -13,18 +13,16 @@
     flex-wrap: wrap;
     gap: 0.5rem;
 
-    @media (max-width: 506px) {
-      @include flex(flex-start);
-      width: 100%;
-      flex-wrap: nowrap;
+    @media (max-width: 800px) {
+      display: none;
     }
   }
 
   &__about {
-    @include flex(space-evenly);
+    @include flex(space-around);
     max-width: 400px;
     width: 100%;
-    padding-right: 50px;
+    padding-right: 60px;
 
     .icon {
       display: inline-block;
@@ -32,6 +30,9 @@
 
       &:hover {
         animation: rotate360 2s linear infinite;
+      }
+      @media (max-width: 800px) {
+        display: none;
       }
 
       @keyframes rotate360 {
@@ -44,19 +45,20 @@
       }
     }
 
-    @media (max-width: 768px) {
-      width: 100%;
-      @include flex(center);
-      flex-direction: column;
-      align-items: end;
-      gap: 1rem;
+    .menu {
+      display: none;
     }
 
     @media (max-width: 800px) {
       .button {
         display: none;
       }
+
       .modal {
+        display: block;
+      }
+
+      .menu {
         display: block;
       }
 
