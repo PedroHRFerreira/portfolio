@@ -47,7 +47,66 @@
   --auxiliary-red-600: #ff2e2e;
 }
 
+.anim-fade {
+  animation: animShowFade 1s forwards;
+}
+@keyframes animShowFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.anim-fade-down {
+  animation: animShowFadeDown 1.25s forwards;
+}
+@keyframes animShowFadeDown {
+  from {
+    opacity: 0;
+    margin-top: -120px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+.loading .anim-loading {
+  position: relative;
+  pointer-events: none;
+  overflow: hidden;
+  border-color: transparent;
+}
+.loading .anim-loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    var(--neutralDarkGrey) 25%,
+    aqua 50%,
+    var(--neutralDarkGrey) 75%
+  );
+  background-size: 300%;
+  pointer-events: none;
+  border-radius: 6px;
+  z-index: 20;
+  animation: loadingEffect 3s infinite;
+}
+@keyframes loadingEffect {
+  from {
+    background-position: 300% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--neutralDarkGrey1);
+
+  --togglerThemeTransition: background-color 0.5s;
 }

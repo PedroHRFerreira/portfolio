@@ -1,44 +1,81 @@
-.carrosel {
-  width: 100%;
-  height: auto;
-
-  overflow: auto;
+.main {
   display: flex;
   justify-content: center;
-  flex-direction: row;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 32px;
-  padding: 84px 32px;
+  flex-direction: column;
 
-  &__modal {
-    max-width: 370px;
+  .carrosel {
     width: 100%;
-    height: 334px;
+    height: auto;
+
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 84px 8px 42px;
 
-    border: 1px solid aqua;
-    border-radius: 6px;
-    background-color: transparent;
-
-    &:hover {
-      box-shadow: 0px 0px 24px aqua;
-    }
-
-    &--image {
+    &__modal {
       max-width: 370px;
-      margin: 0 auto;
-      padding: 30px 15px 5px;
-    }
-    &--text {
       width: 100%;
+      height: auto;
       display: flex;
+      justify-content: center;
       flex-direction: column;
 
-      .text {
-        margin-top: -30px;
+      border: 1px solid aqua;
+      border-radius: 6px;
+      background-color: transparent;
+
+      &:hover {
+        box-shadow: 0px 0px 24px aqua;
+      }
+
+      &--image {
+        max-width: 370px;
+        margin: 0 auto;
+        padding: 30px 15px 5px;
+      }
+      &--text {
+        width: 100%;
+      }
+    }
+  }
+  .carrosel-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    &--back {
+      cursor: pointer;
+      width: 150px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      transition: box-shadow 0.6s ease;
+
+      &:hover {
+        box-shadow: 0px 4px 14px aqua;
+        border-radius: 6px;
+      }
+    }
+    &--next {
+      cursor: pointer;
+      width: 150px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      transition: box-shadow 0.6s ease;
+
+      &:hover {
+        box-shadow: 0px 4px 14px aqua;
+        border-radius: 6px;
       }
     }
   }
