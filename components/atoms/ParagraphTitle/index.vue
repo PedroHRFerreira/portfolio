@@ -43,7 +43,7 @@ export default defineComponent({
 
 <template>
   <h1 class="type-text" :class="[size, types]" @click="titleOnClick">
-    {{ text }} .
+    {{ text }}
   </h1>
 </template>
 
